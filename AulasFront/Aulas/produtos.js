@@ -73,7 +73,6 @@ const carregaDados = () => {
 carregaDados();
 
 const atualizaDados = () => {
-    console.log('Atualizou');
     showAlert('Atualizando dados...');
     carregaDados();
 }
@@ -89,4 +88,4 @@ const showAlert = (message) => {
 }
 
 
-setInterval(atualizaDados, 30000);
+setInterval(atualizaDados, 10000);
