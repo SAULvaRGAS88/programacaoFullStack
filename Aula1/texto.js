@@ -1,1 +1,1 @@
-Strapi FW utilizado para construções de API
+// Strapi FW utilizado para construções de API
