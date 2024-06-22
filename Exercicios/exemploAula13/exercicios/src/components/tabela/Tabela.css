@@ -1,7 +1,17 @@
 .container-tabela {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    padding: 10px; 
-  }
-  
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .container-tabela {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 10px;
+        justify-content: center;
+    }
+}
