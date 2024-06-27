@@ -15,4 +15,4 @@ const Card = ({ produto }) => {
     );
 };
 
-export default Card;
+export default Card;''

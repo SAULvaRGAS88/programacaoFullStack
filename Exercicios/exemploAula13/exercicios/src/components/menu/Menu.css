@@ -12,6 +12,7 @@
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-evenly
 }
 
 .nav-links li {
@@ -29,11 +30,18 @@
     background-color: #ddd;
     color: black;
 }
+.menu{
+    background-color: rgba(20, 69, 160, 0.212);
+    border-radius: 20px;
+    width: 80%;
+}
 
 /* Responsivo */
 @media (max-width: 600px) {
     .nav-links {
         flex-direction: column;
+        display: flex;
+        align-items: center;
     }
 
     .nav-links li {
