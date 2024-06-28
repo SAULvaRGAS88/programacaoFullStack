@@ -42,8 +42,8 @@ export const enviaDadosFake = (dados) => {
                 throw new Error('Erro na requisição');
             }
 
-            const data = await response.json();
-            console.log('Dados enviados com sucesso:', data);
+            await response.json();
+            alert('Atenção Dados enviados com sucesso:');
         } catch (error) {
             console.error('Erro ao enviar dados:', error);
         }
@@ -51,4 +51,30 @@ export const enviaDadosFake = (dados) => {
 
     fetchPost();
 };
+
+export const enviaDadosProdutos = (dados) => {
+    const fetchPost = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/produtos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro na requisição');
+            }
+
+            await response.json();
+            alert('Atenção Dados enviados com sucesso:');
+        } catch (error) {
+            console.error('Erro ao enviar dados:', error);
+        }
+    };
+
+    fetchPost();
+};
+
 

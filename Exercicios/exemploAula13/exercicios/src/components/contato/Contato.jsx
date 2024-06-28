@@ -1,23 +1,31 @@
-import React, { useState } from 'react'
-import { Container } from '../containerPricipal/Container'
-import { Menu } from '../menu/Menu'
-import './Contato.css'
+import React, { useState } from 'react';
+import { Container } from '../containerPricipal/Container';
+import { Menu } from '../menu/Menu';
+import './Contato.css';
+import { enviaDadosFake } from '../dados/DadosFake';
 
 export const Contato = () => {
     const [inputs, setInputs] = useState({});
 
     const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({ ...values, [name]: value }))
-    }
+        const { name, value } = event.target;
+        setInputs(values => ({ ...values, [name]: value }));
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Enviando para API', inputs);
-    }
 
-    enviaDadosFake(inputs)
+        const requiredFields = ['nome', 'idade', 'email', 'mensagem'];
+        for (const field of requiredFields) {
+            if (!inputs[field] || inputs[field].trim() === '') {
+                alert(`O campo ${field} é obrigatório.`);
+                return;
+            }
+        }
+
+        enviaDadosFake(inputs);
+        setInputs({});
+    };
 
     return (
         <Container>
@@ -25,27 +33,27 @@ export const Contato = () => {
             <div className='containerContato'>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="username">NOME:</label>
+                        <label htmlFor="nome">NOME:</label>
                         <input
                             type="text"
                             id="username"
-                            name="username"
-                            value={inputs.username || ""}
+                            name="nome"
+                            value={inputs.nome || ""}
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="age">IDADE:</label>
+                        <label htmlFor="idade">IDADE:</label>
                         <input
                             type="number"
                             id="age"
-                            name="age"
-                            value={inputs.age || ""}
+                            name="idade"
+                            value={inputs.idade || ""}
                             onChange={handleChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="age">E-MAIL:</label>
+                        <label htmlFor="email">E-MAIL:</label>
                         <input
                             type="email"
                             id="email"
@@ -55,11 +63,11 @@ export const Contato = () => {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="message">MENSAGEM:</label>
+                        <label htmlFor="mensagem">MENSAGEM:</label>
                         <textarea
                             id="message"
-                            name="message"
-                            value={inputs.message || ""}
+                            name="mensagem"
+                            value={inputs.mensagem || ""}
                             onChange={handleChange}
                         />
                     </div>
@@ -69,5 +77,5 @@ export const Contato = () => {
                 </form>
             </div>
         </Container>
-    )
-}
+    );
+};
