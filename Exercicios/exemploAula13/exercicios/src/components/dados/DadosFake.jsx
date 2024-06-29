@@ -77,4 +77,25 @@ export const enviaDadosProdutos = (dados) => {
     fetchPost();
 };
 
+export const excluirDadosProdutos = (id) => {
+    const fetchPost = async () => {
+        try {
+            const response = await fetch(`http://localhost:3000/produtos/${id}`, {
+                method: 'DELETE'
+            });
+
+            if (!response.ok) {
+                throw new Error('Erro na requisição');
+            }
+
+            await response.json();
+            alert('Atenção: Dados excluídos com sucesso.');
+        } catch (error) {
+            console.error('Erro ao excluir dados:', error);
+        }
+    };
+
+    fetchPost();
+};
+
 

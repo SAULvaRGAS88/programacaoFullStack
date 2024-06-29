@@ -44,3 +44,7 @@
 .containerContato input[type="submit"]:hover {
     background-color: #45a049;
 }
+.entreCtt{
+    display: flex;
+    justify-content: center;
+}

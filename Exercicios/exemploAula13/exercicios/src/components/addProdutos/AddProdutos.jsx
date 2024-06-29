@@ -50,6 +50,9 @@ export const AddProdutos = () => {
         <Container>
             <Menu />
             <div className='containerContato'>
+            <div className='entreCtt'>
+                    <h3>Adicione um Produto</h3>
+                </div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="nome">NOME DO PRODUTO:</label>

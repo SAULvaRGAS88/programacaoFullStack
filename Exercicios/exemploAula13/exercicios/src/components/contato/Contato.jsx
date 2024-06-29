@@ -31,6 +31,10 @@ export const Contato = () => {
         <Container>
             <Menu />
             <div className='containerContato'>
+                <div className='entreCtt'>
+                    <h3>Entre em Contato</h3>
+                </div>
+                
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="nome">NOME:</label>
