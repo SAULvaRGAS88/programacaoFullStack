@@ -1,28 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Menu.css';
+import './Menu.css'; // Make sure Menu.css is correctly linked
 
 export const Menu = () => {
     return (
         <nav className="menu">
             <ul className="nav-links">
                 <li>
-                    <a href="/">
-                        Home &#127968; </a>
+                    <Link to="/">
+                        Home &#127968;
+                    </Link>
                 </li>
                 <li>
-                    <a href="quemsomos">
-                        Quem Somos &#128101;</a>
+                    <Link to="/quemsomos">
+                        Quem Somos &#128101;
+                    </Link>
                 </li>
                 <li>
-                    <a href="contato">
-                        Contato &#128222;</a>
+                    <Link to="/contato">
+                        Contato &#128222;
+                    </Link>
                 </li>
                 <li>
-                    <a href="addprodutos">
+                    <Link to="/addprodutos">
                         Adicionar Produto <span style={{ color: "green" }}>➕</span>
-                    </a>
-
+                    </Link>
                 </li>
             </ul>
         </nav>
